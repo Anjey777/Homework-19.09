@@ -4,24 +4,8 @@
 782 -> 8
 918 -> 1
 */
-
-int GetRandomNumber(int leftRange, int rightRange) // [100-1000)
-{
-    Random rnd = new Random();
-    int result = rnd.Next(leftRange, rightRange); // [leftRange,rightRange)
-    return result;
-}
-
-int DeleteSecondDigit(int number)
-{
-    int firstDigit = number / 100;
-    int thirdDigit = number % 10;
-
-    return firstDigit*10 + thirdDigit;
-}
-
-int number = GetRandomNumber(100,1000);
-Console.WriteLine(number);
-
-int twoDigits = DeleteSecondDigit(number);
-Console.WriteLine(twoDigits);
+Console.WriteLine("Введите трехзначное число:");
+int number  = int.Parse(Console.ReadLine());
+            if ((number < 100) || (number > 999)) Console.Write("Вы ввели не трехзначное число!");
+            else
+     Console.WriteLine((number%100)/10);
